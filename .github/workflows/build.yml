@@ -33,9 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-<<<<<<< HEAD
-                    run: mvn -f testproject.sonar/pom.xml <goals> ...
-=======
+
           run: mvn -f testproject.sonar/pom.xml <goals> ...
->>>>>>> ec2722dbcc9177ef991d7976794be1eaca881225
+
+          run: mvn -f testproject.sonar/pom.xml 
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
