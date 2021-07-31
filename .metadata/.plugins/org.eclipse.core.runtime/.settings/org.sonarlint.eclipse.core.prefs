@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+servers/SonarCloud%2Fsatish-ravula/auth=true
+servers/SonarCloud%2Fsatish-ravula/org=satish-ravula
+servers/SonarCloud%2Fsatish-ravula/url=https\://sonarcloud.io

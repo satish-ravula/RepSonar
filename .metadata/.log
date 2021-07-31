@@ -905,3 +905,114 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-07-31 18:43:43.680
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1956)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2091)
+	at org.eclipse.lsp4e.operations.declaration.OpenDeclarationHyperlinkDetector.detectHyperlinks(OpenDeclarationHyperlinkDetector.java:94)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.sonarlint.eclipse.core 4 0 2021-07-31 19:31:59.985
+!MESSAGE Unable to update SonarLint binding data for project 'RepSonar' on 'SonarCloud/satish-ravula'
+!STACK 0
+org.sonarsource.sonarlint.core.client.api.exceptions.ProjectNotFoundException: Project with key 'RepSonar' in organization 'satish-ravula' not found on SonarQube server (was it deleted?)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectQualityProfilesDownloader.fetchModuleQualityProfiles(ProjectQualityProfilesDownloader.java:56)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetchQualityProfiles(ProjectConfigurationDownloader.java:59)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetch(ProjectConfigurationDownloader.java:44)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.updateConfiguration(ProjectStorageUpdateExecutor.java:73)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.lambda$update$0(ProjectStorageUpdateExecutor.java:65)
+	at org.sonarsource.sonarlint.core.client.api.util.FileUtils.replaceDir(FileUtils.java:233)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.update(ProjectStorageUpdateExecutor.java:64)
+	at org.sonarsource.sonarlint.core.container.connected.ConnectedContainer.updateProject(ConnectedContainer.java:131)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.updateProject(ConnectedSonarLintEngineImpl.java:270)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$34(ConnectedEngineFacade.java:473)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.doWithEngine(ConnectedEngineFacade.java:166)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.updateProjectStorage(ConnectedEngineFacade.java:472)
+	at org.sonarlint.eclipse.core.internal.jobs.ProjectStorageUpdateJob.lambda$0(ProjectStorageUpdateJob.java:45)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.sonarlint.eclipse.core.internal.jobs.ProjectStorageUpdateJob.run(ProjectStorageUpdateJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.sonarlint.eclipse.core 4 4 2021-07-31 19:33:00.193
+!MESSAGE Failed to update binding data for 1 project(s)
+!SUBENTRY 1 org.sonarlint.eclipse.core 4 0 2021-07-31 19:33:00.193
+!MESSAGE Unable to update binding data for project 'testproject.sonar'
+!STACK 0
+org.sonarsource.sonarlint.core.client.api.exceptions.ProjectNotFoundException: Project with key 'RepSonar' in organization 'satish-ravula' not found on SonarQube server (was it deleted?)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectQualityProfilesDownloader.fetchModuleQualityProfiles(ProjectQualityProfilesDownloader.java:56)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetchQualityProfiles(ProjectConfigurationDownloader.java:59)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetch(ProjectConfigurationDownloader.java:44)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.updateConfiguration(ProjectStorageUpdateExecutor.java:73)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.lambda$update$0(ProjectStorageUpdateExecutor.java:65)
+	at org.sonarsource.sonarlint.core.client.api.util.FileUtils.replaceDir(FileUtils.java:233)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.update(ProjectStorageUpdateExecutor.java:64)
+	at org.sonarsource.sonarlint.core.container.connected.ConnectedContainer.updateProject(ConnectedContainer.java:131)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.updateProject(ConnectedSonarLintEngineImpl.java:270)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$34(ConnectedEngineFacade.java:473)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.doWithEngine(ConnectedEngineFacade.java:166)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.updateProjectStorage(ConnectedEngineFacade.java:472)
+	at org.sonarlint.eclipse.core.internal.jobs.ServerUpdateJob.lambda$0(ServerUpdateJob.java:69)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.sonarlint.eclipse.core.internal.jobs.ServerUpdateJob.run(ServerUpdateJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.sonarlint.eclipse.core 4 4 2021-07-31 19:33:00.419
+!MESSAGE Failed to update binding data for 1 project(s)
+!SUBENTRY 1 org.sonarlint.eclipse.core 4 0 2021-07-31 19:33:00.419
+!MESSAGE Unable to update binding data for project 'testproject.sonar'
+!STACK 0
+org.sonarsource.sonarlint.core.client.api.exceptions.ProjectNotFoundException: Project with key 'RepSonar' in organization 'satish-ravula' not found on SonarQube server (was it deleted?)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectQualityProfilesDownloader.fetchModuleQualityProfiles(ProjectQualityProfilesDownloader.java:56)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetchQualityProfiles(ProjectConfigurationDownloader.java:59)
+	at org.sonarsource.sonarlint.core.container.connected.update.ProjectConfigurationDownloader.fetch(ProjectConfigurationDownloader.java:44)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.updateConfiguration(ProjectStorageUpdateExecutor.java:73)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.lambda$update$0(ProjectStorageUpdateExecutor.java:65)
+	at org.sonarsource.sonarlint.core.client.api.util.FileUtils.replaceDir(FileUtils.java:233)
+	at org.sonarsource.sonarlint.core.container.connected.update.perform.ProjectStorageUpdateExecutor.update(ProjectStorageUpdateExecutor.java:64)
+	at org.sonarsource.sonarlint.core.container.connected.ConnectedContainer.updateProject(ConnectedContainer.java:131)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.updateProject(ConnectedSonarLintEngineImpl.java:270)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$34(ConnectedEngineFacade.java:473)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.doWithEngine(ConnectedEngineFacade.java:166)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.updateProjectStorage(ConnectedEngineFacade.java:472)
+	at org.sonarlint.eclipse.core.internal.jobs.ServerUpdateJob.lambda$0(ServerUpdateJob.java:69)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.sonarlint.eclipse.core.internal.jobs.ServerUpdateJob.run(ServerUpdateJob.java:67)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2021-07-31 19:37:21.889
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+org.sonarsource.sonarlint.core.client.api.exceptions.StorageException: No data stored for project 'RepSonar'. Please update the binding.
